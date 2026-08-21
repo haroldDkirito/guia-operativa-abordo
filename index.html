@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#071d4f">
+  <meta name="description" content="Guía Operativa Digital ABORDO para operadores: procedimientos, checklist, seguridad, infografías, videos y acceso directo a Mesa de Control por WhatsApp.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="ABORDO">
+  <meta name="application-name" content="Guía Operativa ABORDO">
+  <meta name="version" content="10.0">
+  <meta property="og:title" content="Guía Operativa del Operador | ABORDO">
+  <meta property="og:description" content="Consulta rápida para operar de forma segura, puntual y alineada a los procedimientos ABORDO.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/logo-abordo.png">
+  <meta name="twitter:card" content="summary">
+  <title>Guía Operativa del Operador | ABORDO · V10</title>
+  <link rel="icon" href="assets/img/logo-abordo.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <img class="logo" src="assets/img/logo-abordo.png" alt="ABORDO">
+      <div class="brand"><strong>ABORDO</strong><span>Guía Operativa Digital</span></div>
+      <div class="header-actions">
+        <span class="status-pill">● Consulta rápida</span>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Activar modo oscuro">☾</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-inner">
+      <div class="eyebrow"><span class="pulse"></span> Operación segura · información al momento</div>
+      <h1>Tu guía de operación, siempre a la mano.</h1>
+      <p>Encuentra procedimientos, puntos críticos, material visual y verificaciones sin perder tiempo durante la operación.</p>
+      <div class="search-shell">
+        <div class="search" role="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <label class="sr-only" for="searchInput">Buscar en la guía</label>
+          <input id="searchInput" autocomplete="off" placeholder="Busca: No Show, Samsara, TIA, llantas…">
+          <button id="searchBtn" type="button">Buscar</button>
+        </div>
+        <div id="searchResults" class="search-results" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="tabs-wrap" aria-label="Secciones principales">
+      <nav class="tabs" role="tablist">
+        <button class="tab active" data-tab="home" role="tab" aria-selected="true" aria-controls="panel-home" tabindex="0">Inicio</button>
+        <button class="tab" data-tab="guide" role="tab" aria-selected="false" aria-controls="panel-guide" tabindex="-1">Guía</button>
+        <button class="tab" data-tab="media" role="tab" aria-selected="false" aria-controls="panel-media" tabindex="-1">Infografías</button>
+        <button class="tab" data-tab="videos" role="tab" aria-selected="false" aria-controls="panel-videos" tabindex="-1">Videos</button>
+      </nav>
+    </div>
+
+    <div class="tab-panel active" id="panel-home" role="tabpanel">
+      <section class="section">
+        <div class="section-head"><h2>Accesos rápidos</h2><p>Resuelve una duda en segundos</p></div>
+        <div class="filter-row" aria-label="Filtrar accesos">
+          <button class="filter active" data-filter="all">Todos</button>
+          <button class="filter" data-filter="antes">Antes de salir</button>
+          <button class="filter" data-filter="durante">Durante</button>
+          <button class="filter" data-filter="casos">Casos clave</button>
+          <button class="filter" data-filter="media">Material</button>
+        </div>
+        <div class="quick-grid" id="quickGrid"></div>
+      </section>
+
+      <section class="section">
+        <div class="contact">
+          <h3>Primero protege a las personas y la operación</h3>
+          <p style="color:#d8e5f5;line-height:1.5;margin:0">Ante una situación de riesgo, reporta inmediatamente a Mesa de Control y sigue las indicaciones. No improvises ni ocultes una incidencia.</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="tab-panel" id="panel-guide" role="tabpanel">
+      <section class="section" id="checklist">
+        <div class="section-head"><h2>Checklist del operador</h2><p>El avance queda guardado en este dispositivo</p></div>
+        <div class="progress-card">
+          <div class="progress-top"><strong>Progreso de verificación</strong><span id="progressText">0 de 5 completados</span></div>
+          <div class="progress-track"><div class="progress-bar" id="progressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div>
+        </div>
+        <div class="checklist" id="checklistList"></div>
+      </section>
+
+      <section class="section" id="reglas">
+        <div class="section-head"><h2>Puntos no negociables</h2><p>Reglas que protegen el servicio y la seguridad</p></div>
+        <div class="rules" id="rulesList"></div>
+        <div class="rules-warning">Las desviaciones o incidencias deben reportarse por el canal operativo correspondiente. La guía complementa la capacitación y no sustituye una instrucción directa de Mesa de Control.</div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><h2>Consulta por etapa</h2><p>Abre solo lo que necesitas</p></div>
+        <div class="accordion">
+          <article class="accordion-item"><button class="accordion-btn" aria-expanded="false"><span>1. Antes de salir</span><span>＋</span></button><div class="accordion-panel"><div><div class="accordion-content">Repórtate, registra asistencia, valida unidad, documentos, servicios y herramientas operativas.</div></div></div></article>
+          <article class="accordion-item"><button class="accordion-btn" aria-expanded="false"><span>2. Durante el servicio</span><span>＋</span></button><div class="accordion-panel"><div><div class="accordion-content">Confirma datos, comunica a tiempo, respeta límites y reporta incidencias antes de improvisar cambios.</div></div></div></article>
+          <article class="accordion-item"><button class="accordion-btn" aria-expanded="false"><span>3. Casos clave y cierre</span><span>＋</span></button><div class="accordion-panel"><div><div class="accordion-content">Consulta No Show, objetos olvidados, combustible, TIA, formatos, evidencias y entrega de unidad.</div></div></div></article>
+        </div>
+      </section>
+
+      <section class="section" id="contactos">
+        <div class="whatsapp-contact-card">
+          <div class="wa-contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img">
+              <path fill="currentColor" d="M16 3C9.38 3 4 8.18 4 14.56c0 2.35.73 4.53 1.98 6.35L4.7 27l6.36-1.9A12.25 12.25 0 0 0 16 26.13c6.62 0 12-5.18 12-11.57C28 8.18 22.62 3 16 3Zm0 20.85c-1.76 0-3.4-.5-4.8-1.35l-.34-.2-3.78 1.13.78-3.58-.22-.36a9.04 9.04 0 0 1-1.44-4.93c0-5.13 4.4-9.3 9.8-9.3s9.8 4.17 9.8 9.3-4.4 9.29-9.8 9.29Zm5.38-6.97c-.3-.14-1.75-.83-2.02-.92-.27-.1-.47-.14-.67.14-.2.29-.77.92-.94 1.11-.17.2-.35.22-.64.08-.3-.14-1.25-.44-2.38-1.41-.88-.75-1.48-1.68-1.65-1.96-.17-.29-.02-.44.13-.58.13-.12.3-.34.44-.51.15-.17.2-.29.3-.48.1-.2.05-.36-.02-.51-.08-.14-.67-1.55-.92-2.12-.24-.56-.49-.48-.67-.49h-.57c-.2 0-.52.07-.79.36-.27.29-1.04.98-1.04 2.38 0 1.4 1.06 2.76 1.21 2.95.15.2 2.08 3.06 5.04 4.29.7.3 1.25.47 1.68.6.7.22 1.35.19 1.86.12.57-.08 1.75-.69 2-1.35.25-.66.25-1.23.17-1.35-.07-.12-.27-.2-.57-.34Z"/>
+            </svg>
+          </div>
+          <div class="wa-contact-copy">
+            <span>Apoyo operativo</span>
+            <h3>Mesa de Control</h3>
+            <strong>+52 1 998 109 8697</strong>
+            <p>Si necesitas apoyo con la operación, abre directamente el chat de Mesa de Control en WhatsApp.</p>
+          </div>
+          <a class="wa-main-btn" href="https://wa.me/5219981098697?text=Hola%2C%20Mesa%20de%20Control.%20Requiero%20apoyo%20con%20la%20operaci%C3%B3n." target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp de Mesa de Control">Abrir WhatsApp</a>
+        </div>
+      </section>
+    </div>
+
+    <div class="tab-panel" id="panel-media" role="tabpanel">
+      <section class="section">
+        <div class="section-head"><h2>Infografías y avisos</h2><p>13 materiales disponibles · toca una imagen para verla completa</p></div>
+        <div class="info-filter-row" id="infoFilterRow" aria-label="Filtrar infografías">
+          <button class="info-filter active" type="button" data-info-filter="all">Todas <span>13</span></button>
+          <button class="info-filter" type="button" data-info-filter="operacion">Operación <span>5</span></button>
+          <button class="info-filter" type="button" data-info-filter="seguridad">Seguridad <span>5</span></button>
+          <button class="info-filter" type="button" data-info-filter="aeropuerto">Aeropuerto <span>1</span></button>
+          <button class="info-filter" type="button" data-info-filter="presentacion">Presentación <span>1</span></button>
+          <button class="info-filter" type="button" data-info-filter="agencias">Agencias <span>1</span></button>
+        </div>
+        <div class="gallery-status" id="galleryStatus" aria-live="polite">Mostrando 13 de 13 materiales</div>
+        <div class="gallery" id="gallery"></div>
+      </section>
+    </div>
+
+    <div class="tab-panel" id="panel-videos" role="tabpanel">
+      <section class="section">
+        <div class="section-head"><h2>Videos de capacitación</h2><p>Material operativo real para consulta del operador</p></div>
+        <div class="video-grid" id="videosGrid"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><img class="footer-logo" src="assets/img/logo-abordo.png" alt=""><div><strong>ABORDO</strong><div style="font-size:.76rem;color:#9eb3ce;margin-top:3px">Guía Operativa Digital para operadores</div></div></div>
+      <div class="footer-meta">
+        <div class="footer-version"><strong>Versión 10.0</strong><span>Actualizada: 21 de agosto de 2026</span></div>
+        <div class="footer-links"><a href="#inicio">Inicio</a><a href="https://wa.me/5219981098697?text=Hola%2C%20Mesa%20de%20Control.%20Requiero%20apoyo%20con%20la%20operaci%C3%B3n." target="_blank" rel="noopener noreferrer">Mesa de Control</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="Navegación móvil">
+    <button data-nav="home"><b>⌂</b>Inicio</button>
+    <button data-nav="guide"><b>✓</b>Guía</button>
+    <button data-nav="media"><b>▧</b>Infografías</button>
+    <button data-nav="videos"><b>▶</b>Videos</button>
+  </nav>
+
+  <a class="whatsapp-float" href="https://wa.me/5219981098697?text=Hola%2C%20Mesa%20de%20Control.%20Requiero%20apoyo%20con%20la%20operaci%C3%B3n." target="_blank" rel="noopener noreferrer" aria-label="Contactar Mesa de Control por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9.38 3 4 8.18 4 14.56c0 2.35.73 4.53 1.98 6.35L4.7 27l6.36-1.9A12.25 12.25 0 0 0 16 26.13c6.62 0 12-5.18 12-11.57C28 8.18 22.62 3 16 3Zm0 20.85c-1.76 0-3.4-.5-4.8-1.35l-.34-.2-3.78 1.13.78-3.58-.22-.36a9.04 9.04 0 0 1-1.44-4.93c0-5.13 4.4-9.3 9.8-9.3s9.8 4.17 9.8 9.3-4.4 9.29-9.8 9.29Zm5.38-6.97c-.3-.14-1.75-.83-2.02-.92-.27-.1-.47-.14-.67.14-.2.29-.77.92-.94 1.11-.17.2-.35.22-.64.08-.3-.14-1.25-.44-2.38-1.41-.88-.75-1.48-1.68-1.65-1.96-.17-.29-.02-.44.13-.58.13-.12.3-.34.44-.51.15-.17.2-.29.3-.48.1-.2.05-.36-.02-.51-.08-.14-.67-1.55-.92-2.12-.24-.56-.49-.48-.67-.49h-.57c-.2 0-.52.07-.79.36-.27.29-1.04.98-1.04 2.38 0 1.4 1.06 2.76 1.21 2.95.15.2 2.08 3.06 5.04 4.29.7.3 1.25.47 1.68.6.7.22 1.35.19 1.86.12.57-.08 1.75-.69 2-1.35.25-.66.25-1.23.17-1.35-.07-.12-.27-.2-.57-.34Z"/></svg><span>Mesa de Control</span></a>
+  <button class="back-top" id="backTop" type="button" aria-label="Volver arriba">↑</button>
+
+  <div class="modal-bg" id="modalBg"></div>
+  <section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-head"><strong id="modalTitle">Detalle</strong><button class="modal-close" id="modalClose" aria-label="Cerrar">×</button></div>
+    <div class="modal-body" id="modalBody"></div>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
